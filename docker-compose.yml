@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  hubstaff-activity:
+    build: .
+    volumes:
+      - .:/app
+
+  test:
+    build: .
+    volumes:
+      - .:/app
+    command: ["python", "-m", "unittest", "discover", "-s", "tests"]
